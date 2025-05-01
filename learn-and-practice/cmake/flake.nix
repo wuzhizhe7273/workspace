@@ -32,13 +32,12 @@
               modules = [
                 {
                   # https://devenv.sh/reference/options/
-                  packages = [ pkgs.hello ];
-
-                  enterShell = ''
-                    hello
-                  '';
-
-                  processes.hello.exec = "hello";
+                  packages = with pkgs; [
+                    cmake
+                  ];
+                  languages.c = {
+                    enable=true;
+                  };
                 }
               ];
             };
