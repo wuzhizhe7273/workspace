@@ -1,0 +1,11 @@
+cmake_minimum_required(VERSION 3.22)
+project(CALC)
+set(CMAKE_CXX_STANDARD 23)
+set(CMAKE_EXPERIMENTAL_CXX_MODULES ON)  
+
+include_directories(${PROJECT_SOURCE_DIR}/include)
+file(GLOB SRC_LIST ${CMAKE_CURRENT_SOURCE_DIR}/src/*.cpp)
+add_executable(app ${SRC_LIST})
+set(LIBRARY_OUTPUT_PATH ${PROJECT_SOURCE_DIR}/lib)
+# add_library(calc STATIC ${SRC_LIST})
+add_library(calc SHARED ${SRC_LIST})

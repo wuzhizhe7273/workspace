@@ -32,12 +32,7 @@
               modules = [
                 {
                   # https://devenv.sh/reference/options/
-                  packages = with pkgs; [
-                    cmake
-                  ];
-                  languages.c = {
-                    enable=true;
-                  };
+                  languages.cplusplus.enable=true;
                 }
               ];
             };
